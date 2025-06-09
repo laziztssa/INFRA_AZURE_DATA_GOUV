@@ -18,8 +18,7 @@ variable "environment" {
   default = "dev"
 }
 
-variable "sku" {
-  type = string
-  default = "premium"
-}
 
+variable "resource_group_name" {
+  type = string
+}

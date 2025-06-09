@@ -26,3 +26,11 @@ module "databricks" {
   sku          = var.sku
   resource_group_name = module.rg.name
 }
+
+module "data_factory" {
+  source              = "../../Modules/Data_Factory"
+  project_name        = var.project_name
+  environment         = var.environment
+  location            = module.rg.location
+  resource_group_name = module.rg.name
+}
