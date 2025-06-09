@@ -34,3 +34,16 @@ module "data_factory" {
   location            = module.rg.location
   resource_group_name = module.rg.name
 }
+
+module "keyvaulds" {
+  source              = "../../Modules/Key_Vaulds"
+  project_name        = var.project_name
+  environment         = var.environment
+  location            = module.rg.location
+  sku                 = var.sku
+  resource_group_name = module.rg.name
+  subscription_id = var.subscription_id
+  tenant_id          = var.tenant_id
+  object_id          = var.object_id
+  depends_on = [module.databricks, module.data_factory, module.storage, module.rg]
+}
