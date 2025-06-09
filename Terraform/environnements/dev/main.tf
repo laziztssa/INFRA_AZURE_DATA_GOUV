@@ -16,3 +16,13 @@ module "storage" {
   location            = module.rg.location
   resource_group_name = module.rg.name
 }
+
+
+module "databricks" {
+  source = "../../Modules/Databricks"
+  project_name = var.project_name
+  environment  = var.environment
+  location     = module.rg.location
+  sku          = var.sku
+  resource_group_name = module.rg.name
+}

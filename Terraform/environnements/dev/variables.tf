@@ -5,7 +5,7 @@ variable "location" {
 
 variable "project_name" {
   type = string
-  default = "data_gouv"
+  default = "datagouv"
 }
 
 variable "subscription_id" {
@@ -17,3 +17,9 @@ variable "environment" {
   type = string
   default = "dev"
 }
+
+variable "sku" {
+  type = string
+  default = "standard"
+}
+
